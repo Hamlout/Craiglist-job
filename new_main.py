@@ -19,16 +19,13 @@ class Craig:
         options.add_argument('--start-maximized')
         options.add_argument('--headless')
         options.add_argument('--log-level=3')
-        # self.driver = Chrome(service=Service(
-        #     ChromeDriverManager().install()), options=options)
-        self.driver = webdriver.Chrome(executable_path=ChromeDriverManager(
-            version="114.0.5735.90").install(), options=options)
+        self.driver = Chrome(service=Service(
+            ChromeDriverManager().install()), options=options)
         self.wait = WebDriverWait(self.driver, 60)
         self.parsed_links = []
 
     def parse_item(self, link):  # removed
-        if self.wait.until(
-                EC.visibility_of_all_elements_located((By.CLASS_NAME, 'removed'))):
+        if self.driver.find_elements(By.CLASS_NAME, 'removed'):
             return None
         self.driver.get(link)
         car_info = self.wait.until(
