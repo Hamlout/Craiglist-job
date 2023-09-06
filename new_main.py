@@ -13,8 +13,8 @@ class Craig:
     def __init__(self):
 
         # creating selenium driver
-        self.url = input("Enter the Craigslist link you want: ")
-        # self.url = 'https://orangecounty.craigslist.org/search/orange-ca/cta?lat=33.799&lon=-117.765&min_price=0&purveyor=owner&search_distance=7.5#search=1~gallery~0~0'
+        # self.url = input("Enter the Craigslist link you want: ")
+        self.url = 'https://orangecounty.craigslist.org/search/orange-ca/cta?lat=33.799&lon=-117.765&min_price=0&purveyor=owner&search_distance=7.5#search=1~gallery~0~0'
         options = ChromeOptions()
         options.add_argument('--start-maximized')
         options.add_argument('--headless')
